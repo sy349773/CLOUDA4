@@ -1,0 +1,42 @@
+<style>
+    #newTitle{
+        width:30em;
+        margin:auto;
+        text-align:center
+    }
+    #newTitleLabel{
+        font-size: 20px;
+    }
+    .text-center {
+      text-align: center;
+  }
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand"><%=name%></a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">SOMETHING 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">SOMETHING 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">SOMETHING 3</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          SUBMIT A FORM
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/<%=name%>/MBR/<%=id%>">MBR</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Company 1</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Company 2</a>
+          <div class="dropdown-divider"></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

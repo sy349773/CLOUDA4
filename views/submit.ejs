@@ -1,0 +1,66 @@
+<% include ./partials/header%>
+<% include ./partials/secondHeader%>
+<p></p>
+<p></p>
+<div id="newTitle" class="ui segment">
+  <label id ="newTitleLabel">
+    Do you agree to submit the following confidential information to MBR?
+  </label>
+  <% if(!name.localeCompare("CompanyX")) { %>
+  <form class= "ui form" action="/<%=name%>/submit" method ="POST">
+    <p></p>
+    <div class ="field">
+      <label>Name</label>
+      <input type = "text" name="user[name]" value = "<%=user.name%>" readonly>
+    </div>
+    <div class ="field">
+      <label>Position</label>
+      <input type = "text" name="user[position]" value = "<%=user.position%>" readonly>
+    </div>
+    <div class ="field">
+      <label>Years</label>
+      <input type = "text" name="user[years]" value = "<%=user.years%>" readonly>
+    </div>
+    <div class ="field">
+      <label>Salary</label>
+      <input type = "text" name="user[salary]" value = "<%=user.salary%>" readonly>
+    </div>
+    <div class ="field">
+      <label>PLEASE ENTER YOUR MBR APPLICATION NO</label>
+      <input type = "text" name="user[appNum]" placeholder="Application Number" size="24" required>
+      <p>The Application NO must be 24 charcaters long</p>
+    </div>
+    <div class ="field">
+      <label>PLEASE CLICK ON AGREE</label>
+      <input type="checkbox" name="user[agreement]" value="true" required> I Agree to the terms and conditions<br>
+    </div>
+    <input type = "submit">
+  </form>
+  <% } else { %>
+  <form class= "ui form" action="/<%=name%>/submit" method ="POST">
+      <div class ="field">
+        <label>Name</label>
+        <input type = "text" name="user[name]" value = "<%=user.name%>" readonly>
+      </div>
+      <div class ="field">
+        <label>Policy</label>
+        <input type = "text" name="user[policy]" value = "<%=user.policy%>" readonly>
+      </div>
+      <div class ="field">
+        <label>Value</label>
+        <input type = "text" name="user[value]" value = "<%=user.value%>" readonly>
+      </div>
+      <div class ="field">
+        <label>PLEASE ENTER YOUR MBR APPLICATION NO</label>
+        <input type = "text" name="user[appNum]" placeholder="Application Number" size="24" required>
+        <p>The Application NO must be 24 charcaters long</p>
+      </div>
+      <div class ="field">
+        <label>PLEASE CLICK ON AGREE</label>
+        <input type="checkbox" name="user[agreement]" value="true" required> I Agree to the terms and conditions<br>
+      </div>
+      <input type = "submit">
+    </form>
+</div>
+<% }  %>
+<% include ./partials/footer%>

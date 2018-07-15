@@ -1,0 +1,87 @@
+<% include ./partials/header%>
+<style>
+    #newTitle{
+        width:30em;
+        margin:auto;
+        text-align:center
+    }
+    #newTitleLabel{
+        font-size: 20px;
+    }
+    .text-center {
+      text-align: center;
+  }
+</style>
+<h1 class = "text-center" ><%=name%></h1>
+  <% if(!name.localeCompare("BrokerMBR")) { %>
+    <div id="newTitle" class="ui segment">
+      <label id ="newTitleLabel">
+        CREATE A REQUEST
+      </label>
+      <form class= "ui form" action="/BrokerMBR/new" method ="POST">
+        <p></p>
+        <div class ="field">
+          <label>Name</label>
+          <input type = "text" name="user[name]" placeholder = "Enter your Name" required>
+        </div>
+        <div class ="field">
+          <label>Address</label>
+          <input type = "text" name="user[address]" placeholder = "Enter your Address" required>
+        </div>
+        <div class ="field">
+          <label>Phone</label>
+          <input type="tel" id="phone" name="user[phone]" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required />
+          <p> Phone format: 123-456-7890 </p>
+        </div>
+        <div class ="field">
+          <label>Employer</label>
+          <input type = "text" name="user[employer]" placeholder = "Enter your Employer" required>
+        </div>
+        <div class ="field">
+          <label>Life Insurance Company</label>
+          <input type = "text" name="user[insurance]" placeholder = "Enter your Life Insurance Company" required>
+        </div>
+        <input type = "submit">
+      </form>
+    </div>
+    <p></p>
+    <h1 class = "text-center" >OR</h1>
+    <p></p>
+    <div id="newTitle" class="ui segment">
+      <label id ="newTitleLabel">
+          CHECK YOUR APPLICATION
+      </label>
+      <form class= "ui form" action="/BrokerMBR/status" method ="POST">
+        <p></p>
+        <div class ="field">
+          <label>Application NO</label>
+          <input type = "text" name="id" placeholder = "Enter your Application Number" size="24" required>
+            <p>The Application NO must be 24 charcaters long</p>
+        </div>
+        <input type = "submit">
+      </form>
+    </div>
+
+  <% } else { %>
+    <div id="newTitle" class="ui segment">
+    <label id ="newTitleLabel">
+        LOGIN
+    </label>
+    <form class= "ui form" name="loginForm" action="/<%=name%>/login" method ="POST">
+      <p></p>
+      <div class ="field">
+        <label>Username</label>
+        <input type = "text" id = "us" name="user[username]" placeholder = "Enter Username" required>
+      </div>
+      <div class ="field">
+        <label>Password</label>
+        <input type = "password" id = "pas" name="user[password]"  placeholder = "Enter Password" required>
+      </div>
+        <input type = "submit">
+    </form>
+    </div>
+  <% } %>
+  <script>
+
+  </script>
+<% include ./partials/footer%>
